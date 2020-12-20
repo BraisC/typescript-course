@@ -4,5 +4,6 @@
     "allowJs": true,
     "target": "es5",
     "declaration": true
+    //"noImplicitAny": true
   }
 }
