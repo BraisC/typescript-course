@@ -1,5 +1,5 @@
-var userInput;
-var userName;
+let userInput;
+let userName;
 userInput = 'Max';
 userInput = 5;
 console.log(userInput);
@@ -11,6 +11,6 @@ if (typeof userInput === 'string') {
 console.log(userInput);
 // never produces a value, not even undefined
 function generateError(message, code) {
-    throw { message: message, errorCode: code };
+    throw { message, errorCode: code };
 }
 generateError('Error', 500);

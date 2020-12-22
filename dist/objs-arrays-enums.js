@@ -4,7 +4,7 @@ var Role;
     Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
     Role[Role["AUTHOR"] = 2] = "AUTHOR";
 })(Role || (Role = {}));
-var person = {
+const person = {
     name: 'Brais',
     age: 32,
     hobbies: ['Sports', 'Cooking'],
