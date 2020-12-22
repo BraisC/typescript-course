@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2015",
+    "module": "CommonJS",
+    //"lib": [], //by default assumes all DOM APIs
     "outDir": "./dist",
     "declaration": true
     //"noImplicitAny": true
