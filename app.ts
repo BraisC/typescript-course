@@ -15,3 +15,10 @@ if (typeof userInput === 'string') {
 }
 
 console.log(userInput);
+
+// never produces a value, not even undefined
+function generateError(message: string, code: number): never {
+  throw { message, errorCode: code };
+}
+
+generateError('Error', 500);
