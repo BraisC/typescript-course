@@ -7,3 +7,6 @@ function printResults(num) {
     console.log("Result: " + num);
 }
 printResults(sum(5, 12));
+var combineValues;
+combineValues = sum;
+console.log(combineValues(18, 18));

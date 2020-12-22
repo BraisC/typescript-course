@@ -9,3 +9,9 @@ function printResults(num: number) {
 }
 
 printResults(sum(5, 12));
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = sum;
+
+console.log(combineValues(18, 18));
