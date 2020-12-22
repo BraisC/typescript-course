@@ -1,17 +1,9 @@
-function combine(input1, input2, resultConversion) {
-    var result;
-    if ((typeof input1 === 'number' && typeof input2 === 'number') ||
-        resultConversion === 'as-number') {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+// Infers number as return type
+function sum(n1, n2) {
+    return n1 + n2;
 }
-var combinedAges = combine(30, 26, 'as-number');
-console.log(combinedAges);
-var combinedStringAges = combine('30', '26', 'as-number');
-console.log(combinedStringAges);
-var combinedNames = combine('Pedro', 'Pablo', 'as-text');
-console.log(combinedNames);
+// infers void as return type
+function printResults(num) {
+    console.log("Result: " + num);
+}
+printResults(sum(5, 12));
