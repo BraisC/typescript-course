@@ -1,25 +1,17 @@
-// Infers number as return type
-function sum(n1: number, n2: number) {
-  return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+userInput = 'Max';
+userInput = 5;
+
+console.log(userInput);
+
+userName = userInput; // Esto no daría error si userInput fuese de tipo any
+
+console.log(userName);
+
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-// infers void as return type
-function printResults(num: number) {
-  console.log(`Result: ${num}`);
-}
-
-// Has a function as parameter
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-  const result = n1 + n2;
-  cb(result);
-}
-
-printResults(sum(5, 12));
-
-let combineValues: (a: number, b: number) => number;
-
-combineValues = sum;
-
-console.log(combineValues(18, 18));
-
-addAndHandle(2, 3, (res) => console.log(res));
+console.log(userInput);
