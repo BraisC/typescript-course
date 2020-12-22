@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "allowJs": true,
     "target": "es5",
     "declaration": true
     //"noImplicitAny": true
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ], // this is a default actually
+  "include": [
+    "./src"
+  ]
 }
