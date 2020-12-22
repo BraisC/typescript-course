@@ -1,11 +1,3 @@
-declare enum Role {
-    ADMIN = 0,
-    READ_ONLY = 1,
-    AUTHOR = 2
-}
-declare const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: Role;
-};
+declare function combine(input1: number | string, input2: number | string): any;
+declare const combinedAges: any;
+declare const combinedNames: any;
