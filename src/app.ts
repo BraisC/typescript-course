@@ -2,7 +2,7 @@ let userInput: unknown;
 let userName: string;
 
 userInput = 'Max';
-userInput = 5;
+userInput = 6;
 
 console.log(userInput);
 

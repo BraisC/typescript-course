@@ -16,3 +16,4 @@ let combineValues;
 combineValues = sum;
 console.log(combineValues(18, 18));
 addAndHandle(2, 3, (res) => console.log(res));
+//# sourceMappingURL=functions.js.map

@@ -1,7 +1,7 @@
 let userInput;
 let userName;
 userInput = 'Max';
-userInput = 5;
+userInput = 6;
 console.log(userInput);
 // userName = userInput; // Esto no daría error si userInput fuese de tipo any
 console.log(userName);
@@ -14,3 +14,4 @@ function generateError(message, code) {
     throw { message, errorCode: code };
 }
 generateError('Error', 500);
+//# sourceMappingURL=app.js.map

@@ -11,3 +11,4 @@ const person = {
     role: Role.ADMIN,
 };
 console.log(person.name);
+//# sourceMappingURL=objs-arrays-enums.js.map

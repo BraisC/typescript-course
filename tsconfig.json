@@ -4,8 +4,9 @@
     "module": "CommonJS",
     //"lib": [], //by default assumes all DOM APIs
     "outDir": "./dist",
-    "declaration": true
-    //"noImplicitAny": true
+    "declaration": true,
+    //"noImplicitAny": true,
+    "sourceMap": true
   },
   "exclude": [
     "node_modules"
