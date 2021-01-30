@@ -1,11 +1,10 @@
 {
   "dependencies": {
-    "@braisc/eslint-config": "^2.2.3"
+    "@braisc/eslint-config": "^2.2.4"
   },
   "name": "typescript-course",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"

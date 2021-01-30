@@ -1,6 +1,5 @@
 {
   "extends": "@braisc",
-  "rules": { "no-console": 0 },
   "parserOptions": {
     "project": "./tsconfig.json"
   }
