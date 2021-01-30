@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@braisc/eslint-config": "^2.2.4"
+    "@braisc/eslint-config": "^2.3.1"
   },
   "name": "typescript-course",
   "version": "1.0.0",
