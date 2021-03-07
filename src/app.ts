@@ -2,7 +2,7 @@
 class Department {
   // private name: string;
 
-  private employees: string[] = [];
+  protected employees: string[] = [];
 
   constructor(private name: string, private readonly id: string) {
     // this.name = n;
@@ -20,6 +20,13 @@ class Department {
 class ITDepartment extends Department {
   constructor(id: string, public admins: string[]) {
     super('IT', id);
+  }
+
+  addEmployee(employee: string) {
+    if (employee === 'Brais') {
+      return;
+    }
+    this.employees.push(employee);
   }
 }
 

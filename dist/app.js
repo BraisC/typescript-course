@@ -19,6 +19,12 @@ class ITDepartment extends Department {
         super('IT', id);
         this.admins = admins;
     }
+    addEmployee(employee) {
+        if (employee === 'Brais') {
+            return;
+        }
+        this.employees.push(employee);
+    }
 }
 const dep = new Department('Prueba', '2');
 console.log(dep);
