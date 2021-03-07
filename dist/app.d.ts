@@ -1,7 +1,7 @@
 declare class Department {
-    name: string;
+    private name;
     private employees;
-    constructor(n: string);
+    constructor(name: string);
     describe(this: Department): void;
     addEmployee(employee: string): void;
 }
