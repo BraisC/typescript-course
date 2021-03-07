@@ -4,6 +4,10 @@ class Department {
   constructor(n: string) {
     this.name = n;
   }
+
+  describe(this: Department) {
+    console.log(this.name);
+  }
 }
 
 const dep = new Department('Prueba');
