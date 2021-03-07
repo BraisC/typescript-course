@@ -1,8 +1,9 @@
 interface Named {
-  name: string;
+  name?: string;
 }
 interface Named {
   age: number;
+  outPutName?: string;
 }
 
 interface Greetable extends Named {
@@ -10,16 +11,20 @@ interface Greetable extends Named {
 }
 
 class Person implements Greetable {
-  name: string;
+  name?: string;
 
   age: number;
 
-  constructor(n: string) {
+  constructor(n?: string) {
     this.name = n;
   }
 
   greet(phrase: string) {
-    console.log(`${phrase} ${this.name}`);
+    if (this.name) {
+      console.log(`${phrase} ${this.name}`);
+    } else {
+      console.log('Hi');
+    }
   }
 }
 let user1: Greetable;

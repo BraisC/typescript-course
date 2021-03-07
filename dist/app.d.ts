@@ -1,16 +1,17 @@
 interface Named {
-    name: string;
+    name?: string;
 }
 interface Named {
     age: number;
+    outPutName?: string;
 }
 interface Greetable extends Named {
     greet(phrase: string): void;
 }
 declare class Person implements Greetable {
-    name: string;
+    name?: string;
     age: number;
-    constructor(n: string);
+    constructor(n?: string);
     greet(phrase: string): void;
 }
 declare let user1: Greetable;

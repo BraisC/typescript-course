@@ -3,7 +3,12 @@ class Person {
         this.name = n;
     }
     greet(phrase) {
-        console.log(`${phrase} ${this.name}`);
+        if (this.name) {
+            console.log(`${phrase} ${this.name}`);
+        }
+        else {
+            console.log('Hi');
+        }
     }
 }
 let user1;
