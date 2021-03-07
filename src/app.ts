@@ -1,41 +1,24 @@
-type Named = {
-  name?: string;
+type Admin = {
+  name: string;
+  privileges: string[];
 };
 
-interface Greetable extends Named {
-  greet(phrase: string): void;
-}
+type Employee = {
+  name: string;
+  startDate: Date;
+};
 
-class Person implements Greetable {
-  name?: string;
+type ElevatedEmployee = Admin & Employee;
 
-  age: number;
+const e1: ElevatedEmployee = {
+  name: 'Brais',
+  privileges: ['create-server'],
+  startDate: new Date(),
+};
 
-  constructor(n?: string) {
-    this.name = n;
-  }
+console.log(e1);
+type Combinable = string | number;
 
-  greet(phrase: string) {
-    if (this.name) {
-      console.log(`${phrase} ${this.name}`);
-    } else {
-      console.log('Hi');
-    }
-  }
-}
-let user1: Greetable;
+type Numeric = number | boolean;
 
-// eslint-disable-next-line prefer-const
-user1 = new Person('Brais');
-
-user1.greet('Hola');
-
-interface AddFn {
-  (a: number, b: number): number;
-}
-
-let add: AddFn;
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// eslint-disable-next-line prefer-const
-add = (n1: number, n2: number) => n1 + n2;
+type Intersected = Combinable & Numeric;
