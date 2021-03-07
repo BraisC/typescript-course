@@ -9,10 +9,13 @@ declare abstract class Department {
 declare class ITDepartment extends Department {
     admins: string[];
     private lastAdmin;
+    private static instance;
+    private constructor();
     get mostRecentAdmin(): string;
     set mostRecentAdmin(value: string);
-    constructor(id: string, admins: string[]);
     addEmployee(employee: string): void;
+    addAdmin(admin: string): void;
     describe(this: ITDepartment): void;
+    static getInstance(): ITDepartment;
 }
 declare const accounting: ITDepartment;

@@ -26,7 +26,7 @@ class ITDepartment extends Department {
         console.log(value);
         if (!value)
             throw new Error('Please provide a valid name');
-        this.addEmployee(value);
+        this.addAdmin(value);
     }
     addEmployee(employee) {
         if (employee === 'Brais') {
@@ -34,14 +34,23 @@ class ITDepartment extends Department {
         }
         this.employees.push(employee);
     }
+    addAdmin(admin) {
+        this.admins.push(admin);
+    }
     describe() {
         console.log(this.name, this.id);
     }
+    static getInstance() {
+        if (this.instance)
+            return this.instance;
+        this.instance = new ITDepartment('34', ['Max']);
+        return this.instance;
+    }
 }
-const accounting = new ITDepartment('34', ['Max']);
+const accounting = ITDepartment.getInstance();
 console.log(accounting);
-console.log(accounting.mostRecentAdmin);
 accounting.mostRecentAdmin = 'Nacho';
+console.log(accounting.mostRecentAdmin);
 console.log(accounting);
 accounting.addEmployee('pepe');
 console.log(accounting);
