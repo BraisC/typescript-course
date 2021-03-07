@@ -1,16 +1,14 @@
 /* eslint-disable max-classes-per-file */
-class Department {
+abstract class Department {
   // private name: string;
 
   protected employees: string[] = [];
 
-  constructor(private name: string, private readonly id: string) {
+  constructor(protected name: string, protected readonly id: string) {
     // this.name = n;
   }
 
-  describe(this: Department) {
-    console.log(this.name, this.id);
-  }
+  abstract describe(this: Department): void;
 
   addEmployee(employee: string) {
     this.employees.push(employee);
@@ -42,15 +40,11 @@ class ITDepartment extends Department {
     }
     this.employees.push(employee);
   }
+
+  describe(this: ITDepartment) {
+    console.log(this.name, this.id);
+  }
 }
-
-const dep = new Department('Prueba', '2');
-
-console.log(dep);
-
-dep.addEmployee('manolo');
-
-console.log(dep);
 
 const accounting = new ITDepartment('34', ['Max']);
 

@@ -1,9 +1,9 @@
-declare class Department {
-    private name;
-    private readonly id;
+declare abstract class Department {
+    protected name: string;
+    protected readonly id: string;
     protected employees: string[];
     constructor(name: string, id: string);
-    describe(this: Department): void;
+    abstract describe(this: Department): void;
     addEmployee(employee: string): void;
 }
 declare class ITDepartment extends Department {
@@ -13,6 +13,6 @@ declare class ITDepartment extends Department {
     set mostRecentAdmin(value: string);
     constructor(id: string, admins: string[]);
     addEmployee(employee: string): void;
+    describe(this: ITDepartment): void;
 }
-declare const dep: Department;
 declare const accounting: ITDepartment;

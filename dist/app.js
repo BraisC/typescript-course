@@ -7,9 +7,6 @@ class Department {
         this.employees = [];
         // this.name = n;
     }
-    describe() {
-        console.log(this.name, this.id);
-    }
     addEmployee(employee) {
         this.employees.push(employee);
     }
@@ -37,11 +34,10 @@ class ITDepartment extends Department {
         }
         this.employees.push(employee);
     }
+    describe() {
+        console.log(this.name, this.id);
+    }
 }
-const dep = new Department('Prueba', '2');
-console.log(dep);
-dep.addEmployee('manolo');
-console.log(dep);
 const accounting = new ITDepartment('34', ['Max']);
 console.log(accounting);
 console.log(accounting.mostRecentAdmin);
