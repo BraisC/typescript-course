@@ -8,6 +8,9 @@ declare class Department {
 }
 declare class ITDepartment extends Department {
     admins: string[];
+    private lastAdmin;
+    get mostRecentAdmin(): string;
+    set mostRecentAdmin(value: string);
     constructor(id: string, admins: string[]);
     addEmployee(employee: string): void;
 }

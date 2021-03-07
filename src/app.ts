@@ -18,8 +18,22 @@ class Department {
 }
 
 class ITDepartment extends Department {
+  private lastAdmin: string;
+
+  get mostRecentAdmin() {
+    if (this.lastAdmin) return this.lastAdmin;
+    throw new Error('No admin found');
+  }
+
+  set mostRecentAdmin(value: string) {
+    console.log(value);
+    if (!value) throw new Error('Please provide a valid name');
+    this.addEmployee(value);
+  }
+
   constructor(id: string, public admins: string[]) {
     super('IT', id);
+    [this.lastAdmin] = admins;
   }
 
   addEmployee(employee: string) {
@@ -38,6 +52,12 @@ dep.addEmployee('manolo');
 
 console.log(dep);
 
-const accounting = new ITDepartment('34', ['max']);
+const accounting = new ITDepartment('34', ['Max']);
 
+console.log(accounting);
+
+console.log(accounting.mostRecentAdmin);
+accounting.mostRecentAdmin = 'Nacho';
+console.log(accounting);
+accounting.addEmployee('pepe');
 console.log(accounting);
