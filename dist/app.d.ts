@@ -1,5 +1,10 @@
-interface Greetable {
+interface Named {
     name: string;
+}
+interface Named {
+    age: number;
+}
+interface Greetable extends Named {
     greet(phrase: string): void;
 }
 declare class Person implements Greetable {
@@ -9,3 +14,7 @@ declare class Person implements Greetable {
     greet(phrase: string): void;
 }
 declare let user1: Greetable;
+interface AddFn {
+    (a: number, b: number): number;
+}
+declare let add: AddFn;

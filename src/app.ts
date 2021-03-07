@@ -1,6 +1,11 @@
-interface Greetable {
+interface Named {
   name: string;
+}
+interface Named {
+  age: number;
+}
 
+interface Greetable extends Named {
   greet(phrase: string): void;
 }
 
@@ -23,3 +28,13 @@ let user1: Greetable;
 user1 = new Person('Brais');
 
 user1.greet('Hola');
+
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line prefer-const
+add = (n1: number, n2: number) => n1 + n2;
