@@ -3,12 +3,12 @@ class Department {
 
   private employees: string[] = [];
 
-  constructor(private name: string) {
+  constructor(private name: string, private readonly id: string) {
     // this.name = n;
   }
 
   describe(this: Department) {
-    console.log(this.name);
+    console.log(this.name, this.id);
   }
 
   addEmployee(employee: string) {
@@ -16,7 +16,7 @@ class Department {
   }
 }
 
-const dep = new Department('Prueba');
+const dep = new Department('Prueba', '2');
 
 console.log(dep);
 
