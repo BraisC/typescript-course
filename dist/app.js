@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class Department {
     constructor(name, id) {
         this.name = name;
@@ -13,8 +14,16 @@ class Department {
         this.employees.push(employee);
     }
 }
+class ITDepartment extends Department {
+    constructor(id, admins) {
+        super('IT', id);
+        this.admins = admins;
+    }
+}
 const dep = new Department('Prueba', '2');
 console.log(dep);
 dep.addEmployee('manolo');
 console.log(dep);
+const accounting = new ITDepartment('34', ['max']);
+console.log(accounting);
 //# sourceMappingURL=app.js.map

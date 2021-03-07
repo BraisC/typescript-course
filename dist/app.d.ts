@@ -6,4 +6,9 @@ declare class Department {
     describe(this: Department): void;
     addEmployee(employee: string): void;
 }
+declare class ITDepartment extends Department {
+    admins: string[];
+    constructor(id: string, admins: string[]);
+}
 declare const dep: Department;
+declare const accounting: ITDepartment;
