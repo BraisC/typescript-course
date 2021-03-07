@@ -1,2 +1,5 @@
-declare const userName = "maximilian";
-declare const add: (a: number, b?: number) => number;
+declare class Department {
+    name: string;
+    constructor(n: string);
+}
+declare const dep: Department;

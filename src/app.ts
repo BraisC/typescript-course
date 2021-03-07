@@ -1,8 +1,11 @@
-// Code goes here
-const userName = 'maximilian';
+class Department {
+  name: string;
 
-console.log(userName);
+  constructor(n: string) {
+    this.name = n;
+  }
+}
 
-const add = (a: number, b = 1) => a + b;
+const dep = new Department('Prueba');
 
-console.log(add(2, 3));
+console.log(dep);
