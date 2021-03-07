@@ -1,10 +1,6 @@
-interface Named {
+declare type Named = {
     name?: string;
-}
-interface Named {
-    age: number;
-    outPutName?: string;
-}
+};
 interface Greetable extends Named {
     greet(phrase: string): void;
 }
