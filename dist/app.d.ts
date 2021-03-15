@@ -25,3 +25,13 @@ declare type Vehicle = Car | Truck;
 declare const v1: Car;
 declare const v2: Truck;
 declare function useVehicle(vehicle: Vehicle): void;
+interface Bird {
+    type: 'bird';
+    flyingSpeed: number;
+}
+interface Horse {
+    type: 'horse';
+    runningSpeed: number;
+}
+declare type Animal = Bird | Horse;
+declare function moveAnimal(animal: Animal): void;
