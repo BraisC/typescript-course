@@ -37,3 +37,6 @@ declare type Animal = Bird | Horse;
 declare function moveAnimal(animal: Animal): void;
 declare const input: HTMLInputElement;
 declare const input2: HTMLInputElement;
+interface ErrorContainer {
+    [prop: string]: string;
+}
