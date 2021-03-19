@@ -52,4 +52,7 @@ function moveAnimal(animal) {
     console.log(`Moving with speed ${speed}`);
 }
 moveAnimal({ type: 'bird', flyingSpeed: 30 });
+const input = document.getElementById('user-input');
+const input2 = document.getElementById('user-input');
+input.value = 'hi';
 //# sourceMappingURL=app.js.map
