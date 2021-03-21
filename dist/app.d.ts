@@ -11,7 +11,11 @@ declare const e1: ElevatedEmployee;
 declare type Combinable = string | number;
 declare type Numeric = number | boolean;
 declare type Intersected = Combinable & Numeric;
-declare function add(a: Combinable, b: Combinable): string | number;
+declare function add(a: number, b: number): number;
+declare function add(a: string, b: string): string;
+declare function add(a: string, b: number): string;
+declare function add(a: number, b: string): string;
+declare const x: number;
 declare type UnkownEmployee = Employee | Admin;
 declare function printEmployeeInformation(emp: UnkownEmployee): void;
 declare class Car {
