@@ -17,4 +17,8 @@ function countAndPrint(element) {
     return [element, descriptionText];
 }
 console.log(countAndPrint('Hi there!'));
+function extractAndConvert(obj, key) {
+    return obj[key];
+}
+console.log(extractAndConvert({ name: 'paco' }, 'name'));
 //# sourceMappingURL=app.js.map
