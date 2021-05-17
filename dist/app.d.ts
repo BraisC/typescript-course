@@ -1,2 +1,6 @@
-declare const names: Array<string>;
-declare const promise: Promise<string>;
+declare function merge<T, U>(objA: T, objB: U): T & U;
+declare const mergedObj: {
+    name: string;
+} & {
+    age: number;
+};
