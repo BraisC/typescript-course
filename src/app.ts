@@ -10,10 +10,13 @@
 
 // promise.then((data) => data.split(' '));
 
-function merge<T, U>(objA: T, objB: U) {
+function merge<T extends Record<string, unknown>, U extends Record<string, unknown>>(
+  objA: T,
+  objB: U
+) {
   return { ...objA, ...objB };
 }
 
-const mergedObj = merge({ name: 'Max' }, { age: 30 });
+const mergedObj = merge({ name: 'Max' }, 30);
 
 console.log(mergedObj.age);
