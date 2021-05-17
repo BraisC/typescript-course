@@ -11,4 +11,10 @@ function merge(objA, objB) {
 }
 const mergedObj = merge({ name: 'Max' }, { age: 30 });
 console.log(mergedObj.age);
+function countAndPrint(element) {
+    let descriptionText = 'Got no value.';
+    element.length > 0 && (descriptionText = `Got ${element.length} elements`);
+    return [element, descriptionText];
+}
+console.log(countAndPrint('Hi there!'));
 //# sourceMappingURL=app.js.map

@@ -17,6 +17,18 @@ function merge<T extends Record<string, unknown>, U extends Record<string, unkno
   return { ...objA, ...objB };
 }
 
-const mergedObj = merge({ name: 'Max' }, 30);
+const mergedObj = merge({ name: 'Max' }, { age: 30 });
 
 console.log(mergedObj.age);
+
+type Lengthy = {
+  length: number;
+};
+
+function countAndPrint<T extends Lengthy>(element: T): [T, string] {
+  let descriptionText = 'Got no value.';
+  element.length > 0 && (descriptionText = `Got ${element.length} elements`);
+  return [element, descriptionText];
+}
+
+console.log(countAndPrint('Hi there!'));
