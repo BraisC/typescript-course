@@ -39,23 +39,42 @@
 
 // console.log(extractAndConvert({ name: 'paco' }, 'name'));
 
-class DataStorage<T extends number | string | boolean> {
-  private data: T[] = [];
+// class DataStorage<T extends number | string | boolean> {
+//   private data: T[] = [];
 
-  addItem(item: T) {
-    this.data.push(item);
-  }
+//   addItem(item: T) {
+//     this.data.push(item);
+//   }
 
-  removeItem(item: T) {
-    if (this.data.indexOf(item)) return;
-    this.data.splice(this.data.indexOf(item), 1);
-  }
+//   removeItem(item: T) {
+//     if (this.data.indexOf(item)) return;
+//     this.data.splice(this.data.indexOf(item), 1);
+//   }
 
-  getItems() {
-    return [...this.data];
-  }
+//   getItems() {
+//     return [...this.data];
+//   }
+// }
+
+// const textStorage = new DataStorage<string>();
+// textStorage.addItem('Max');
+// textStorage.getItems();
+
+type CourseGoal = {
+  title: string;
+  description: string;
+  completeUntil: Date;
+};
+
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+  const courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+
+  return courseGoal as CourseGoal;
 }
 
-const textStorage = new DataStorage<string>();
-textStorage.addItem('Max');
-textStorage.getItems();
+const names: Readonly<Array<string>> = ['Max', 'Anna'];
+
+names.push('Peter');
