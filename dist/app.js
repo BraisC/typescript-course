@@ -6,19 +6,44 @@
 //   }, 2000);
 // });
 // promise.then((data) => data.split(' '));
-function merge(objA, objB) {
-    return Object.assign(Object.assign({}, objA), objB);
+// function merge<T extends Record<string, unknown>, U extends Record<string, unknown>>(
+//   objA: T,
+//   objB: U
+// ) {
+//   return { ...objA, ...objB };
+// }
+// const mergedObj = merge({ name: 'Max' }, { age: 30 });
+// console.log(mergedObj.age);
+// type Lengthy = {
+//   length: number;
+// };
+// function countAndPrint<T extends Lengthy>(element: T): [T, string] {
+//   let descriptionText = 'Got no value.';
+//   element.length > 0 && (descriptionText = `Got ${element.length} elements`);
+//   return [element, descriptionText];
+// }
+// console.log(countAndPrint('Hi there!'));
+// function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
+//   return obj[key];
+// }
+// console.log(extractAndConvert({ name: 'paco' }, 'name'));
+class DataStorage {
+    constructor() {
+        this.data = [];
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    removeItem(item) {
+        if (this.data.indexOf(item))
+            return;
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    getItems() {
+        return [...this.data];
+    }
 }
-const mergedObj = merge({ name: 'Max' }, { age: 30 });
-console.log(mergedObj.age);
-function countAndPrint(element) {
-    let descriptionText = 'Got no value.';
-    element.length > 0 && (descriptionText = `Got ${element.length} elements`);
-    return [element, descriptionText];
-}
-console.log(countAndPrint('Hi there!'));
-function extractAndConvert(obj, key) {
-    return obj[key];
-}
-console.log(extractAndConvert({ name: 'paco' }, 'name'));
+const textStorage = new DataStorage();
+textStorage.addItem('Max');
+textStorage.getItems();
 //# sourceMappingURL=app.js.map
