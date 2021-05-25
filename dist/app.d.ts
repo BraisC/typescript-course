@@ -1,7 +1,6 @@
-declare type CourseGoal = {
-    title: string;
-    description: string;
-    completeUntil: Date;
-};
-declare function createCourseGoal(title: string, description: string, date: Date): CourseGoal;
-declare const names: Readonly<string>[];
+declare function Logger(constructor: Function): void;
+declare class Person {
+    name: string;
+    constructor();
+}
+declare const pers: Person;

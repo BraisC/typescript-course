@@ -9,7 +9,8 @@
     //"noImplicitAny": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "noEmitOnError": true //dont create JS files if there is an error
+    "noEmitOnError": true, //dont create JS files if there is an error
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules"
