@@ -5,9 +5,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 /* eslint-disable @typescript-eslint/ban-types */
-function Logger(constructor) {
-    console.log('Logging...');
-    console.log(constructor);
+function Logger(logString) {
+    return (constructor) => {
+        console.log(logString);
+        console.log(constructor);
+    };
 }
 let Person = class Person {
     constructor() {
@@ -16,7 +18,7 @@ let Person = class Person {
     }
 };
 Person = __decorate([
-    Logger
+    Logger('Logging - Person')
 ], Person);
 const pers = new Person();
 console.log(pers);

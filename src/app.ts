@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-types */
-function Logger(constructor: Function) {
-  console.log('Logging...');
-  console.log(constructor);
+function Logger(logString: string) {
+  return (constructor: Function) => {
+    console.log(logString);
+    console.log(constructor);
+  };
 }
 
-@Logger
+@Logger('Logging - Person')
 class Person {
   name: string;
 

@@ -1,4 +1,4 @@
-declare function Logger(constructor: Function): void;
+declare function Logger(logString: string): (constructor: Function) => void;
 declare class Person {
     name: string;
     constructor();
