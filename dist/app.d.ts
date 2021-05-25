@@ -5,3 +5,11 @@ declare class Person {
     constructor();
 }
 declare const pers: Person;
+declare function Log(target: any, propertyName: string | Symbol): void;
+declare class Product {
+    title: string;
+    private _price;
+    set price(val: number);
+    constructor(t: string);
+    getPriceWithTax(tax: number): number;
+}

@@ -4,6 +4,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable max-classes-per-file */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/ban-types */
 function Logger(logString) {
@@ -32,4 +34,28 @@ Person = __decorate([
 ], Person);
 const pers = new Person();
 console.log(pers);
+//--------------------
+function Log(target, propertyName) {
+    console.log('Property decorator');
+    console.log(target, propertyName);
+}
+class Product {
+    constructor(t) {
+        this.title = t;
+    }
+    set price(val) {
+        if (val > 0) {
+            this._price = val;
+        }
+        else {
+            throw new Error('Invalid price');
+        }
+    }
+    getPriceWithTax(tax) {
+        return this.price * (1 + tax);
+    }
+}
+__decorate([
+    Log
+], Product.prototype, "title", void 0);
 //# sourceMappingURL=app.js.map
