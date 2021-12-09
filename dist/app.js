@@ -7,6 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+/* eslint-disable prettier/prettier */
+/* eslint-disable func-names */
+/* eslint-disable new-cap */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-classes-per-file */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
@@ -18,11 +21,17 @@ function Logger(logString) {
     };
 }
 function WithTemplate(template, hookId) {
-    return (constructor) => {
-        const hookEl = document.getElementById(hookId);
-        const p = new constructor();
-        hookEl && (hookEl.innerHTML = template);
-        hookEl && (hookEl.querySelector('h1').textContent = p.name);
+    return function (originalConstructor) {
+        return class extends originalConstructor {
+            constructor(..._) {
+                super();
+                const hookEl = document.getElementById(hookId);
+                if (hookEl) {
+                    hookEl.innerHTML = template;
+                    hookEl.querySelector('h1').textContent = this.name;
+                }
+            }
+        };
     };
 }
 let Person = class Person {
@@ -61,8 +70,9 @@ function Log4(target, name, position) {
     console.log(position);
 }
 class Product {
-    constructor(t) {
+    constructor(t, p) {
         this.title = t;
+        this._price = p;
     }
     set price(val) {
         console.info(val);
@@ -91,7 +101,7 @@ __decorate([
 __decorate([
     Log
 ], Product, "age", void 0);
-const p1 = new Product('Book');
+const p1 = new Product('Book', 16);
 p1.price = 10;
 console.info(p1.getPriceWithTax(2));
 //# sourceMappingURL=app.js.map

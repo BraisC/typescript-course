@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable func-names */
+/* eslint-disable new-cap */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-classes-per-file */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
@@ -10,11 +13,17 @@ function Logger(logString: string) {
 }
 
 function WithTemplate(template: string, hookId: string) {
-  return (constructor: any) => {
-    const hookEl = document.getElementById(hookId);
-    const p = new constructor();
-    hookEl && (hookEl.innerHTML = template);
-    hookEl && (hookEl.querySelector('h1')!.textContent = p.name);
+  return function <T extends { new(...args: any[]): { name: string } }>(originalConstructor: T) {
+    return class extends originalConstructor {
+      constructor(..._: any[]) {
+        super();
+        const hookEl = document.getElementById(hookId);
+        if (hookEl) {
+          hookEl.innerHTML = template;
+          hookEl.querySelector('h1')!.textContent = this.name;
+        }
+      }
+    };
   };
 }
 
@@ -79,8 +88,9 @@ class Product {
     }
   }
 
-  constructor(t: string) {
+  constructor(t: string, p: number) {
     this.title = t;
+    this._price = p;
   }
 
   @Log3
@@ -89,7 +99,7 @@ class Product {
   }
 }
 
-const p1 = new Product('Book');
+const p1 = new Product('Book', 16);
 
 p1.price = 10;
 console.info(p1.getPriceWithTax(2));

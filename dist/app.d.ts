@@ -1,5 +1,11 @@
 declare function Logger(logString: string): (constructor: Function) => void;
-declare function WithTemplate(template: string, hookId: string): (constructor: any) => void;
+declare function WithTemplate(template: string, hookId: string): <T extends new (...args: any[]) => {
+    name: string;
+}>(originalConstructor: T) => {
+    new (..._: any[]): {
+        name: string;
+    };
+} & T;
 declare class Person {
     name: string;
     constructor();
@@ -14,7 +20,7 @@ declare class Product {
     static age: number;
     private _price;
     set price(val: number);
-    constructor(t: string);
+    constructor(t: string, p: number);
     getPriceWithTax(tax: number): number;
 }
 declare const p1: Product;
