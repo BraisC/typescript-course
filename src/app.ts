@@ -47,6 +47,7 @@ class Product {
   private _price: number;
 
   set price(val: number) {
+    console.info(val);
     if (val > 0) {
       this._price = val;
     } else {
@@ -59,6 +60,11 @@ class Product {
   }
 
   getPriceWithTax(tax: number) {
-    return this.price * (1 + tax);
+    return this._price * (1 + tax);
   }
 }
+
+const p1 = new Product('Book');
+
+p1.price = 10;
+console.info(p1.getPriceWithTax(2));

@@ -13,3 +13,4 @@ declare class Product {
     constructor(t: string);
     getPriceWithTax(tax: number): number;
 }
+declare const p1: Product;

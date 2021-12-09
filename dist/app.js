@@ -44,6 +44,7 @@ class Product {
         this.title = t;
     }
     set price(val) {
+        console.info(val);
         if (val > 0) {
             this._price = val;
         }
@@ -52,10 +53,13 @@ class Product {
         }
     }
     getPriceWithTax(tax) {
-        return this.price * (1 + tax);
+        return this._price * (1 + tax);
     }
 }
 __decorate([
     Log
 ], Product.prototype, "title", void 0);
+const p1 = new Product('Book');
+p1.price = 10;
+console.info(p1.getPriceWithTax(2));
 //# sourceMappingURL=app.js.map
