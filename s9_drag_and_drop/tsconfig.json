@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    //"lib": [], //by default assumes all DOM APIs
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declaration": true,
+    //"noImplicitAny": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "noEmitOnError": true, //dont create JS files if there is an error
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "node_modules"
+  ], // this is a default actually
+  "include": [
+    "./src"
+  ]
+}

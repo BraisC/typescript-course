@@ -1,0 +1,9 @@
+{
+  "extends": "@braisc",
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "parserOptions": {
+    "tsconfigRootDir": "./"
+  }
+}
