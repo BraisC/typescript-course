@@ -6,8 +6,12 @@ declare class Person {
 }
 declare const pers: Person;
 declare function Log(target: any, propertyName: string | Symbol): void;
+declare function Log2(target: any, name: string, descriptor: PropertyDescriptor): void;
+declare function Log3(target: any, name: string | Symbol, descriptor: PropertyDescriptor): void;
+declare function Log4(target: any, name: string | Symbol, position: number): void;
 declare class Product {
     title: string;
+    static age: number;
     private _price;
     set price(val: number);
     constructor(t: string);
