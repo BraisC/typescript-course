@@ -40,6 +40,9 @@
       "last 1 safari version"
     ]
   },
+  "resolutions": {
+    "eslint": "^7.11.0"
+  },
   "devDependencies": {
     "@babel/core": ">=7.11.4",
     "@babel/eslint-parser": ">=7.11.4",
@@ -49,7 +52,7 @@
     "@braisc/eslint-config": "2.4.6",
     "@typescript-eslint/eslint-plugin": ">=3.6.1",
     "@typescript-eslint/parser": ">=3.7.1",
-    "eslint": ">=6.6.0",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": ">=18.0.1",
     "eslint-config-airbnb-typescript": ">=9.0.0",
     "eslint-config-prettier": ">=6.7.0",
