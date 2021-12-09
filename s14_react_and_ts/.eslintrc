@@ -1,0 +1,10 @@
+{
+  "extends": "@braisc",
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/comma-dangle": "off"
+  },
+  "parserOptions": {
+    "tsconfigRootDir": "./"
+  }
+}
