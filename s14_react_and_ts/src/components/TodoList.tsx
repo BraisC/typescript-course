@@ -1,4 +1,5 @@
 import { Todo } from '../index.model';
+import './TodoList.css';
 
 type TodoListProps = {
   items: Array<Todo>;
