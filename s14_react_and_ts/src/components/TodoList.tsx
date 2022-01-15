@@ -1,5 +1,7 @@
+import { Todo } from '../index.model';
+
 type TodoListProps = {
-  items: { id: string; text: string }[];
+  items: Array<Todo>;
 };
 
 export function TodoList({ items }: TodoListProps): JSX.Element {
